@@ -99,8 +99,8 @@ typedef struct {
     _Scheduler_globaledf_Extract, \
     _Scheduler_globaledf_Enqueue_priority_fifo, \
     _Scheduler_globaledf_Allocate, \
-    _Scheduler_simple_Free, \
-    _Scheduler_simple_Update, \
+    _Scheduler_EDF_Free, \
+    _Scheduler_EDF_Update, \
     _Scheduler_globaledf_Enqueue_priority_fifo, \
     _Scheduler_globaledf_Enqueue_priority_lifo, \
     _Scheduler_globaledf_Extract, \
@@ -122,7 +122,7 @@ void *_Scheduler_globaledf_Allocate( Thread_Control *thread);// added Allocate t
 
 void _Scheduler_globaledf_Yield( Thread_Control *thread );
 
-void _Scheduler_globaledf_Schedule( void );
+void _Scheduler_globaledf_Schedule( Thread_Control *thread );
 
 void _Scheduler_globaledf_Start_idle(
   Thread_Control *thread,
